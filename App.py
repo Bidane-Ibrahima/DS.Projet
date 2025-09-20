@@ -9,7 +9,9 @@ import re
 from nltk.stem import PorterStemmer
 
 # 
-
+# Téléchargement des ressources nécessaires (une seule fois)
+nltk.download('punkt')
+nltk.download('stopwords')
 stopwords = set(nltk.corpus.stopwords.words("english"))
 
 # Charger les models=========================
@@ -50,4 +52,5 @@ if st.button("predire"):
    predicted_emotion, label = predict_emotion(input_text)
    st.write("Emotion predit:", predicted_emotion)
    st.write("Label predit:", label)
+
 
